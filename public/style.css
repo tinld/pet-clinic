@@ -1,0 +1,178 @@
+/* --------------------------> General <---------------------------- */
+
+body{
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h6{
+    font-family: 'Lato', serif;
+    font-weight: bold;
+}
+
+.heading{
+    margin: 0px;
+    height: 1000px;
+    width: 100%;
+    background-image: url("img/background.jfif");
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+
+/* --------------------------------> Cover Heading <---------------------------- */
+
+.intro-text{
+    position: relative;
+    padding: 3%;
+    top: 35%;
+    padding-left: 10%;
+    width: 60%;
+    height: 40%;
+    background-image: url("img/intro-text-bg.png");
+    background-size: 100% 100%;
+}
+
+.intro-text p{
+    font-size: 25px;
+}
+
+.intro-text-bg{
+    position: relative;
+    width: 40%;
+}
+.intro-text h1{
+    font-size: 130px;
+    margin:0px;
+    background: linear-gradient(to right, #FFD36E 0%, #00FFC6 50%, #06113C 100%);
+    text-shadow: 3px 5px #8D8DAA;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-family: 'Lato', serif;
+}
+
+
+/* ---------------------> NAVBAR <-----------------------------*/
+
+.navbar{
+    padding: 0px;
+}
+.navbar-bg{
+    position:absolute;
+    height: 10%;
+    width: 100%;
+}
+
+.nav-item{
+    padding: 4% 10%;
+    font-size: 22px;
+}
+
+.nav-item a{
+    color: black;
+}
+
+.nav-item a:hover{
+    color: #DFDFDE;
+    transition: 0.5s;
+}
+
+.navbar-brand:hover{
+    color: #F7F5F2;
+}
+
+.navbar-brand{
+    font-family: 'Quicksand', serif;
+    padding-left: 2%;
+    padding-right: 10%;
+    font-size:40px;
+    color: #F7F5F2;
+}
+
+/* ----------------> Care Essentials  <----------------- */
+
+.care-essentials{
+    margin: 0 16%;
+    padding-top: 40px;
+}
+
+.card{
+    margin: 20px 0;
+}
+
+.card:hover{
+    margin-top: 0px;
+    margin-bottom: 40px;
+    transition: 0.8s;
+    box-shadow: 5px 5px #E0D8B0;
+}
+
+.care-essentials-options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.care-essentials-h1{
+    color: #A1E3D8;
+}
+
+.care-essentials-title{
+    display: inline-block;
+    border-bottom: 2px solid #DFDFDE;
+    margin-bottom: 40px;
+}
+
+/* ---------------------------> Service <-------------------------- */
+
+.service-content{
+    position: relative;
+    margin: 8px 16%;
+    top: -30px;
+}
+
+.service-title{
+    margin-top: 8px;
+    display: inline-block;
+    border-top: 5px solid #1A3C40;
+    background-color: #B9F8D3;
+    padding: 5px 10px;
+}
+
+.service-carousel{
+    margin-top: 6rem;
+    position: relative;
+    top: -34px;
+    background-image: url('/img/background-carousel.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 700px;
+}
+
+
+/* ----------------------> Testimonials Service <----------------- */
+
+#testimonials{
+    padding-left: 24.5%;
+    padding-right: 24.5%;
+    padding-top: 2.4rem;
+}
+
+.carousel-control{
+    height: 30.3rem;
+}
+
+.carousel-item img{
+    height: 30.3rem;
+}
+
+.carousel-inner{
+    width: 100%;
+    height: 40rem;
+}
+
+.book-now{
+    margin: 1rem 0;
+}
+
+.btn-booking-service{
+    margin:  1rem 0;
+}
