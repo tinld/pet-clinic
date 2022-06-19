@@ -1,38 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
-
-    <title>Login</title>
-</head>
-
+<%- include('heading') %> 
 <body>
-    <div class="loginbox">
-        <a href="/">
-            <img src="img/logo1.png" class="avatar">
-        </a>
-        <h1> Login </h1>
-        <form>
-            <p>Username</p>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+  <header class="site-navbar js-sticky-header site-navbar-target navbar-" role="banner">
+    <div class="container">
+      <div class="row align-items-center position-relative">
+        <div class="site-logo">
+          <a href="/home" class="text-black"><span class="text-primary">PetCare</a>
+        </div>
 
-            <p>Password</p>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            <p></p>
+        <div class="col-12">
+          <nav class="site-navigation text-right ml-auto " role="navigation">
 
-            Remember me
-            <input type="checkbox" checked="checked" name="remember" value="">
-
-            <input type="submit" name="" value="login">
-            <a href="#">Lost your password?</a><br>
-            <a href="#">Don't have an acount</a>
-        </form>
+            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+              <li><a href="/" class="nav-link">Home</a></li>
+              <li><a href="#services-section" class="nav-link">Services</a></li>
+              <li class="has-children">
+                <a href="/aboutus" class="nav-link">About Us</a>
+                <ul class="dropdown arrow-top">
+                  <li><a href="/aboutus" class="nav-link">Team</a></li>
+                  <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                  <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                  <li class="has-children">
+                    <a href="#">More Links</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Menu One</a></li>
+                      <li><a href="#">Menu Two</a></li>
+                      <li><a href="#">Menu Three</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+              <li><a href="#blog-section" class="nav-link">Blog</a></li>
+              <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              <li class="has-children">
+                <img class="icon-user" src="/img/user.png" alt="">
+                <ul class="dropdown arrow-top">
+                  <li><a href="/login" class="nav-link">Login</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+      </div>
     </div>
+  </header>
+    <section class="login-phase">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form action="/login" method="post">
+                <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                  <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+      
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+      
+                  <button type="button" class="btn btn-primary btn-floating mx-1">
+                    <i class="fab fa-linkedin-in"></i>
+                  </button>
+                </div>
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                </div>
+      
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="text" class="form-control form-control-lg"
+                    placeholder="Enter a valid email address" name="acc_name">
+                  <label class="form-label" for="form3Example3">Email address</label>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <input type="password" class="form-control form-control-lg"
+                    placeholder="Enter password" name="password">
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+                  <a href="#!" class="text-body">Forgot password?</a>
+                </div>
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="submit" class="btn btn-primary btn-lg"style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+                      class="link-danger">Register</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 </body>
 
 </html>

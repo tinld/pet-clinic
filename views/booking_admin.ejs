@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="booking_admin.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Montaga&family=Montserrat:wght@300;500;700&family=Quicksand:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/489/489399.png" type="image/x-icon" />
+    <title>Booking Schedule Admin</title>
+</head>
+
+<body>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="row align-items-center position-relative">
+                <div class="site-logo">
+                    <a href="/bookingvet" class="text-black"><span class="text-primary">PetCare</a>
+                </div>
+                <div class="col-12">
+                    <nav class="site-navigation text-right ml-auto " role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                            <li><a href="/bookingvet" class="nav-link">Home</a></li>
+                            <li><a href="/bookingvet" class="nav-link">Booking management</a></li>
+                            <li><a href="/articleadmin" class="nav-link">Blog management</a></li>
+                            <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                            <li class="has-children">
+                                <img class="icon-user" src="/img/user.png" alt="">
+                                <ul class="dropdown arrow-top">
+                                    <li><a href="/profile" class="nav-link">Profile</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a href="/" class="nav-link">Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="toggle-button d-inline-block d-lg-none"><a href="#"
+                        class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contain-schedule">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-mon" role="tab"
+                    aria-selected="true">Monday</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-tue" role="tab"
+                    aria-selected="false">Tuesday</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-wed" role="tab"
+                    aria-selected="false">Wednesday</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-thus" role="tab"
+                    aria-selected="false">Thursday</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-fri" role="tab"
+                    aria-selected="false">Friday</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sat" role="tab"
+                    aria-selected="false">Saturday</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-sun" role="tab"
+                    aria-selected="false">Sunday</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-mon" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 0){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    <% } %>
+                    <% }) %>
+                    <!-- end row -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-tue" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 1){ %>
+                    <div class="col-lg-4">
+                        <div class="text-center card-box">
+                            <div class="member-card pt-2 pb-2">
+                                <div class="thumb-lg member-thumb mx-auto"><img
+                                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                        class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                <div class="">
+                                    <h4><%= element.name %></h4>
+                                    <p class="text-muted">Service : <%= element.service %> </p>
+                                    <p><%= element.phone %> </p>
+                                </div>
+                                <ul class="social-links list-inline">
+                                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                            class="tooltips" href="" data-original-title="Facebook"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                            class="tooltips" href="" data-original-title="Twitter"><i
+                                                class="fa fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                            class="tooltips" href="" data-original-title="Skype"><i
+                                                class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <form action="/care" method="get">
+                                    <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                        class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                        Prescription</button>
+                                </form>
+                                <div class="mt-4">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mt-3">
+                                                <h4>Time</h4>
+                                                <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mt-3">
+                                                <h4>Date</h4>
+                                                <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-wed" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 2){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-thus" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 3){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-fri" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 4){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-sat" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 5){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-sun" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row">
+                    <% Mon.forEach(element => { %>
+                    <% if(element.date == 6){ %>
+                        <div class="col-lg-4">
+                            <div class="text-center card-box">
+                                <div class="member-card pt-2 pb-2">
+                                    <div class="thumb-lg member-thumb mx-auto"><img
+                                            src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                            class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                                    <div class="">
+                                        <h4><%= element.name %></h4>
+                                        <p class="text-muted">Service : <%= element.service %> </p>
+                                        <p><%= element.phone %> </p>
+                                    </div>
+                                    <ul class="social-links list-inline">
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Facebook"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Twitter"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
+                                                class="tooltips" href="" data-original-title="Skype"><i
+                                                    class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                    <form action="/care" method="get">
+                                        <button name="btn_bookingid" value="<%= element.booking_id %>" type="submit"
+                                            class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Make
+                                            Prescription</button>
+                                    </form>
+                                    <div class="mt-4">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Time</h4>
+                                                    <p class="mb-0 text-muted"><%= element.booking_time %> </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mt-3">
+                                                    <h4>Date</h4>
+                                                    <p class="mb-0 text-muted"><%= element.schedule %> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    <% } %>
+                    <% }) %>
+                    <!-- end col -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

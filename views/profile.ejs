@@ -1,0 +1,129 @@
+<%- include('heading')  %> 
+<body>
+  <header class="site-navbar js-sticky-header site-navbar-target navbar-" role="banner">
+    <div class="container">
+      <div class="row align-items-center position-relative">
+        <div class="site-logo">
+          <a href="/home" class="text-black"><span class="text-primary">PetCare</a>
+        </div>
+
+        <div class="col-12">
+          <nav class="site-navigation text-right ml-auto " role="navigation">
+
+            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+              <li><a href="/home" class="nav-link">Home</a></li>
+              <li><a href="#ser" class="nav-link">Services</a></li>
+              <li class="has-children">
+                <a href="/aboutus" class="nav-link">About Us</a>
+                <ul class="dropdown arrow-top">
+                  <li><a href="/aboutus" class="nav-link">Team</a></li>
+                  <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                  <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                  <li class="has-children">
+                    <a href="#">More Links</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Menu One</a></li>
+                      <li><a href="#">Menu Two</a></li>
+                      <li><a href="#">Menu Three</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/booking" class="nav-link">Booking</a></li>
+              <li><a href="#blog-section" class="nav-link">Blog</a></li>
+              <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              <li class="has-children">
+                <img class="icon-user" src="/img/user.png" alt="">
+                <ul class="dropdown arrow-top">
+                  <li><a href="/profile" class="nav-link">Profile</a></li>
+                  <li><a href="#" class="nav-link">Pet Health Records</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a href="/" class="nav-link">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+      </div>
+    </div>
+  </header>
+    <div class="container">
+        <div class="main-body">
+              <!-- /Breadcrumb -->
+        
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                          <h4><%= Name %> </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Full Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= Name %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= Email %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= Phone %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">BirthDay</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= Bdate[0].bdate.getDate() + " - " +  parseInt(Bdate[0].bdate.getMonth() + 1) + " - " + Bdate[0].bdate.getFullYear()%> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= Address %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+    </div>
+</body>
+</html>

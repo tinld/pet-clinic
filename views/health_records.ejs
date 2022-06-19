@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="health_records.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/489/489399.png" type="image/x-icon" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="site-navbar js-sticky-header site-navbar-target navbar-" role="banner">
+        <div class="container">
+          <div class="row align-items-center position-relative">
+            <div class="site-logo">
+              <a href="/home" class="text-black"><span class="text-primary">PetCare</a>
+            </div>
+    
+            <div class="col-12">
+              <nav class="site-navigation text-right ml-auto " role="navigation">
+    
+                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                  <li><a href="#home-section" class="nav-link">Home</a></li>
+                  <li><a href="#ser" class="nav-link">Services</a></li>
+                  <li class="has-children">
+                    <a href="/aboutus" class="nav-link">About Us</a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="/aboutus" class="nav-link">Team</a></li>
+                      <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                      <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                      <li class="has-children">
+                        <a href="#">More Links</a>
+                        <ul class="dropdown">
+                          <li><a href="#">Menu One</a></li>
+                          <li><a href="#">Menu Two</a></li>
+                          <li><a href="#">Menu Three</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="/booking" class="nav-link">Booking</a></li>
+                  <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                  <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                  <li class="has-children">
+                    <img class="icon-user" src="/img/user.png" style="width: 30px;" alt="">
+                    <ul class="dropdown arrow-top">
+                      <li><a href="/profile" class="nav-link">Profile</a></li>
+                      <li><a href="/healthrecords" class="nav-link">Health Records</a></li>
+                      <div class="dropdown-divider"></div>
+                      <li><a href="/" class="nav-link">Log Out</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </header>
+    <h1 class="display-4">Pet Health Records</h1>
+    <div class="container">
+        <% history.forEach(element => {%> 
+            <div class="timeline">
+                    <div class="timeline-row">
+                        <div class="timeline-time">
+                            <%= element.booking_time %> <small> <%= element.booking_date.getDate() + " - " +  parseInt(element.booking_date.getMonth() + 1) + " - " + element.booking_date.getFullYear()%> </small>
+                        </div>
+                        <div class="timeline-content">
+                            <i class="icon-attachment"></i>
+                            <h4>Pet Name: <%= element.pet_name %> </h4>
+                            <h6>Pet Type: <%= element.pet_type %> </h6>
+                            <h6>Pet Description: <%= element.pet_description %> </h6>
+                            <br>
+                            <h6>Pet Health Description: <%= element.pet_health_description %> </h6>
+                            <p>Service: 
+                                <% if(element.ser_id == "S_cus"){ %> 
+                                    Normal
+                                <% } else{ %>
+                                    VIP
+                                <% } %> 
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        <% }) %> 
+    </div>
+</body>
+</html>
